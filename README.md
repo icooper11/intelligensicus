@@ -1,6 +1,6 @@
 # Intelligensicus
 
-Species-agnostic wildlife research software for connecting field media and observations to confirmed individual-animal histories and project timelines.
+Species-agnostic animal research and record software for connecting media, observations, and sessions to individual-animal histories and project timelines. It supports wildlife research and can also suit trainers and breeders who need longitudinal animal records.
 
 This public repository is the source for the downloadable Electron desktop app. The hosted web product, download page, and company/product pages are maintained separately by the project owner and are not part of this repository.
 
