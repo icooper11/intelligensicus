@@ -19,7 +19,7 @@ See [DESKTOP_INSTALL.md](DESKTOP_INSTALL.md) for installation, data storage, per
 
 Automated species/individual identification, pose, and persistent visual re-identification are not implemented in this release. WildlifeTools is evaluation-only and is not included in the running inference path. No wildlife model weights or datasets are bundled.
 
-No AI or LLM is required for core research workflows. Bringing your own authorized AI client through MCP and using local models managed by Spartan are planned optional integrations, not available in release 0.1.0.
+No AI or LLM is required for core research workflows. A planned MCP server will expose authorized app capabilities to your own AI agent, whether it runs locally in an editor such as VS Code or is hosted elsewhere. Intelligensicus will not manage that agent's model/runtime. This is separate from any future AI inference provided inside Intelligensicus, which would be managed through Spartan. MCP and app-provided AI are not available in release 0.1.0.
 
 ## Development
 

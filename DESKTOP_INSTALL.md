@@ -19,7 +19,7 @@ The desktop app has its own Electron profile under the current Windows user's ap
 
 Camera and microphone access is requested only when the researcher starts a recording. The app does not scan nearby networks or record in the background. Uploaded files are stored as source evidence; analysis and identity confirmation remain separate researcher-controlled steps.
 
-Core research workflows do not require AI or an LLM. MCP bring-your-own-AI and Spartan-managed local AI are planned optional integrations and are not available in version 0.1.0.
+Core research workflows do not require AI or an LLM. The planned MCP server will expose authorized app capabilities to your own AI agent, whether it runs locally in an editor such as VS Code or is hosted elsewhere. Intelligensicus will not manage that agent's model/runtime. This differs from any future AI inference provided inside Intelligensicus, which would be managed through Spartan. MCP and app-provided AI are not available in version 0.1.0.
 
 ## Uninstall
 
