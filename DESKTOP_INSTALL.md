@@ -19,6 +19,8 @@ The desktop app has its own Electron profile under the current Windows user's ap
 
 Camera and microphone access is requested only when the researcher starts a recording. The app does not scan nearby networks or record in the background. Uploaded files are stored as source evidence; analysis and identity confirmation remain separate researcher-controlled steps.
 
+Core research workflows do not require AI or an LLM. MCP bring-your-own-AI and Spartan-managed local AI are planned optional integrations and are not available in version 0.1.0.
+
 ## Uninstall
 
 Use Windows Settings → Apps → Installed apps → Intelligensicus → Uninstall. Research data in the app-data directory is kept unless you explicitly remove that directory; export needed records and media before removing it.

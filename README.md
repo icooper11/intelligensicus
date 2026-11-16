@@ -19,6 +19,8 @@ See [DESKTOP_INSTALL.md](DESKTOP_INSTALL.md) for installation, data storage, per
 
 Automated species/individual identification, pose, and persistent visual re-identification are not implemented in this release. WildlifeTools is evaluation-only and is not included in the running inference path. No wildlife model weights or datasets are bundled.
 
+No AI or LLM is required for core research workflows. Bringing your own authorized AI client through MCP and using local models managed by Spartan are planned optional integrations, not available in release 0.1.0.
+
 ## Development
 
 Requirements: Node.js 22.13 or later and npm.
