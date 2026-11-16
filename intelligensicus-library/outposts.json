@@ -1,0 +1,424 @@
+{
+  "note": "Intelligensicus outpost map data. Each feature is one plotted location. Add entries over time; the map reads this file live. track drives the pin color and which species-range layer it belongs to. why = the site rationale shown in the popup. slug = the track proposal it links to. These are ILLUSTRATIVE placeholder points seeded by species geography and master-plan overlap; replace/extend with real sites.",
+  "tracks": {
+    "marine-box": {
+      "label": "Marine Box (octopus, cuttlefish)",
+      "color": "#d6669a",
+      "geography": "coastal shelf waters",
+      "flagship": true
+    },
+    "cetacean": {
+      "label": "Marine Mammal (dolphin, orca, whale)",
+      "color": "#2b6b62",
+      "geography": "migratory corridors and pods",
+      "flagship": true
+    },
+    "corvid": {
+      "label": "Corvid (crows, ravens)",
+      "color": "#3f7bae",
+      "geography": "cities worldwide",
+      "flagship": true
+    },
+    "ape": {
+      "label": "Great Ape and Primate",
+      "color": "#9a7b3f",
+      "geography": "equatorial forest and savanna",
+      "flagship": true
+    },
+    "elephant": {
+      "label": "Elephant",
+      "color": "#8a5a3f",
+      "geography": "African and Asian ranges",
+      "flagship": false
+    },
+    "bear": {
+      "label": "Bear",
+      "color": "#6b5030",
+      "geography": "northern temperate ranges",
+      "flagship": false
+    },
+    "domestic": {
+      "label": "Domestic-Lineage (fox, dog, cat, rodent)",
+      "color": "#c39a45",
+      "geography": "wild counterparts and cities",
+      "flagship": false
+    },
+    "boxed": {
+      "label": "Boxed-Species (insects, jumping spider)",
+      "color": "#9a6fc0",
+      "geography": "broad, rig-based",
+      "flagship": false
+    }
+  },
+  "exclusions": [
+    {
+      "title": "Davidson Seamount octopus garden",
+      "lat": 35.75,
+      "lon": -122.73,
+      "why": "Rare deep-sea Muusoctopus nursery (MBARI): thousands nesting at warm seeps, multi-year brooding. A unique, sensitive aggregation. AVOIDED, not worked — protected, never a study or box site."
+    },
+    {
+      "title": "North Atlantic right whale calving grounds (SE US)",
+      "lat": 30.5,
+      "lon": -81.0,
+      "why": "Critically endangered species with NOAA-designated critical calving habitat off Georgia and Florida. AVOIDED: a fragile calving population, protected, never worked."
+    },
+    {
+      "title": "Vaquita refuge, upper Gulf of California",
+      "lat": 31.0,
+      "lon": -114.5,
+      "why": "The vaquita porpoise, the most endangered marine mammal, with fewer than a couple dozen left in a protected refuge. AVOIDED absolutely: conservation-only, never a study site."
+    },
+    {
+      "title": "Virunga / Bwindi mountain gorillas (core)",
+      "lat": -1.4,
+      "lon": 29.5,
+      "why": "Critically endangered mountain gorillas in their protected core range. AVOIDED as a hands-on uplift site: observation and conservation only, no scaffolding of a fragile last population."
+    },
+    {
+      "title": "Deep-sea egg-brooding aggregations (general class)",
+      "lat": -12.0,
+      "lon": -100.0,
+      "why": "The broader class of rare deep-sea egg-brooding fish and cephalopod aggregations at hydrothermal seeps (like the Davidson garden). AVOIDED wherever found: unique reproductive sites, protected, never boxed."
+    },
+    {
+      "title": "Polar bear denning areas (Arctic)",
+      "lat": 71.0,
+      "lon": -156.0,
+      "why": "Polar bears are a conservation-only, climate-crisis species (never an uplift target per the bear plan); maternal denning areas are especially sensitive. AVOIDED entirely."
+    },
+    {
+      "title": "Amazon river dolphin (boto) core habitat",
+      "lat": -3.5,
+      "lon": -62.0,
+      "why": "A threatened freshwater cetacean under mounting pressure in its river-system core. AVOIDED as a scaffolding site: too fragile; observation and conservation only."
+    },
+    {
+      "title": "Critical nurseries / rare aggregations (general)",
+      "lat": 0,
+      "lon": 0,
+      "why": "The standing rule, not a single site: the program excludes rare, unique, ecologically sensitive concentrations everywhere, targeting only common, robust populations."
+    }
+  ],
+  "note_schema": "flagship sites set flagship:true and carry the three siting variables: nearHotspot (near the species concentration, not on top of it), townResource (a resourced town for teams on long stays; an existing research station or university is a FAVORABLE factor when present, NOT a hard requirement), permitting (the access/permit path, stated honestly incl. heavy state-sanctioned cases). Regular candidate pins omit these; they are the wider field of operable sites shown in All-species view.",
+  "outposts": [
+    {
+      "track": "marine-box",
+      "title": "Bodega Bay (UC Davis BML)",
+      "lat": 38.32,
+      "lon": -123.07,
+      "flagship": true,
+      "why": "Northern-California two-spot octopus in the rocky subtidal, anchored to a leading university marine lab.",
+      "nearHotspot": "Works the rocky-reef octopus population off Bodega Head without sitting on any single aggregation.",
+      "townResource": "UC Davis Bodega Marine Laboratory: full research and education facility with on-site housing for long team stays.",
+      "permitting": "University field-station pathway: established scientific-collecting permits and an on-hand IACUC host.",
+      "slug": "marine-box-track"
+    },
+    {
+      "track": "marine-box",
+      "title": "Monterey Bay margin (Hopkins / MBARI)",
+      "lat": 36.62,
+      "lon": -121.9,
+      "flagship": true,
+      "why": "Dense central-coast cephalopod grounds beside the strongest marine-science cluster on the coast.",
+      "nearHotspot": "Sited on the accessible bay margin, deliberately NOT in the National Marine Sanctuary core.",
+      "townResource": "Monterey: a full town plus Hopkins Marine Station (Stanford, est. 1892), MBARI, and the Aquarium.",
+      "permitting": "Sanctuary-adjacent siting keeps the permit path workable; station partnership eases collecting authorization.",
+      "slug": "marine-box-track"
+    },
+    {
+      "track": "marine-box",
+      "title": "Santa Barbara shelf (UCSB)",
+      "lat": 34.41,
+      "lon": -119.85,
+      "flagship": true,
+      "why": "Rich Channel Islands cephalopod habitat, worked from the mainland shelf next to a marine-science university.",
+      "nearHotspot": "On the mainland shelf near the islands, not inside the Channel Islands National Marine Sanctuary.",
+      "townResource": "Santa Barbara plus UCSB marine science: town amenities and a university host for extended stays.",
+      "permitting": "Mainland-shelf siting avoids the islands' sanctuary core; standard state collecting permits apply.",
+      "slug": "marine-box-track"
+    },
+    {
+      "track": "marine-box",
+      "title": "Catalina (USC Wrigley, Two Harbors)",
+      "lat": 33.44,
+      "lon": -118.48,
+      "flagship": true,
+      "why": "Warm-shelf octopus at a dedicated island marine station with dive and housing infrastructure.",
+      "nearHotspot": "Island-shelf octopus habitat worked from the station side, away from protected reserve cores.",
+      "townResource": "USC Wrigley Marine Science Center with dive and lodging support; Two Harbors as a small resource base.",
+      "permitting": "University marine-station access, outside the heaviest mainland MPA layering.",
+      "slug": "marine-box-track"
+    },
+    {
+      "track": "marine-box",
+      "title": "La Jolla / San Diego (Scripps)",
+      "lat": 32.87,
+      "lon": -117.25,
+      "flagship": true,
+      "why": "Southern two-spot range on a warm shelf, anchored to the deepest research-and-city resource base on the coast.",
+      "nearHotspot": "Sited near, not inside, the La Jolla reserves and MPAs.",
+      "townResource": "San Diego plus Scripps Institution of Oceanography (UCSD): major-city amenities and a top oceanographic host.",
+      "permitting": "Reserve-adjacent siting keeps the path clear; Scripps partnership supports collecting authorization.",
+      "slug": "marine-box-track"
+    },
+    {
+      "track": "marine-box",
+      "title": "Half Moon Bay shelf (candidate)",
+      "lat": 37.5,
+      "lon": -122.52,
+      "why": "Regular candidate: accessible central-coast rocky shelf between Bodega and Monterey; fills the field of operable sites.",
+      "slug": "marine-box-track"
+    },
+    {
+      "track": "marine-box",
+      "title": "Morro Bay / Central Coast (candidate)",
+      "lat": 35.37,
+      "lon": -120.87,
+      "why": "Regular candidate: Central Coast estuary-and-shelf access between Monterey and Santa Barbara.",
+      "slug": "marine-box-track"
+    },
+    {
+      "track": "marine-box",
+      "title": "Florida Keys / Dry Tortugas",
+      "lat": 24.63,
+      "lon": -82.87,
+      "why": "Warm shelf octopus habitat; R/V ANGARI charter range already priced (a separate coast, shown for reach).",
+      "slug": "marine-box-track"
+    },
+    {
+      "track": "marine-box",
+      "title": "Mediterranean shelf (Naples)",
+      "lat": 40.8,
+      "lon": 14.2,
+      "why": "Octopus vulgaris heartland; the puzzle-box literature's home water.",
+      "slug": "marine-box-track"
+    },
+    {
+      "track": "marine-box",
+      "title": "Seto Inland Sea",
+      "lat": 34.3,
+      "lon": 133.4,
+      "why": "High cephalopod density and a strong marine-research culture; overlaps cetacean corridors.",
+      "slug": "marine-box-track"
+    },
+    {
+      "track": "cetacean",
+      "title": "Shark Bay / Monkey Mia (Dolphin Project)",
+      "lat": -25.79,
+      "lon": 113.72,
+      "flagship": true,
+      "why": "Sponge-tool dolphin culture with maternal-line transmission (Mann 2012), at an established long-term dolphin research station.",
+      "nearHotspot": "Works the documented Shark Bay dolphin community from the Monkey Mia station, not by pursuing pods offshore.",
+      "townResource": "The Shark Bay Dolphin Research Project + Monkey Mia facilities: a standing field station with lodging and boats.",
+      "permitting": "Long-running permitted dolphin research program; a proven MMPA-equivalent authorization pathway to build on.",
+      "slug": "cetacean-track"
+    },
+    {
+      "track": "cetacean",
+      "title": "Salish Sea (Friday Harbor Labs)",
+      "lat": 48.55,
+      "lon": -123.01,
+      "flagship": true,
+      "why": "Well-studied resident orca pods worked wild-only from a world-class marine station.",
+      "nearHotspot": "Observes resident orca pods from the San Juan station; wild observation and non-invasive scaffolding only.",
+      "townResource": "UW Friday Harbor Laboratories: full marine research facility, housing, and vessels in the pods' range.",
+      "permitting": "MMPA scientific-research posture, no captures; the station is an established permit and IACUC host.",
+      "slug": "cetacean-track"
+    },
+    {
+      "track": "cetacean",
+      "title": "Dominica (Project CETI sperm whales)",
+      "lat": 15.3,
+      "lon": -61.5,
+      "flagship": true,
+      "why": "The sperm-whale study population behind the phonetic-alphabet work (Sharma 2024); acoustic and song-culture focus.",
+      "nearHotspot": "Works the resident Dominica sperm-whale clan CETI already studies, from port, non-invasively.",
+      "townResource": "Roseau and the CETI field presence: a Caribbean port base with an in-place research partnership.",
+      "permitting": "Builds on CETI's existing permitted, non-invasive acoustic-research footprint.",
+      "slug": "cetacean-track"
+    },
+    {
+      "track": "cetacean",
+      "title": "Monterey Bay (cetacean, candidate)",
+      "lat": 36.7,
+      "lon": -121.95,
+      "why": "Regular candidate: dolphin and whale traffic beside the Monterey marine-science cluster; shares the marine-box coast.",
+      "slug": "cetacean-track"
+    },
+    {
+      "track": "corvid",
+      "title": "Seattle (Marzluff / UW crow lab)",
+      "lat": 47.65,
+      "lon": -122.31,
+      "flagship": true,
+      "why": "The proven urban flock behind the face-recognition and social-transmission findings, at the lab that documented them.",
+      "nearHotspot": "Works resident city crows in and around the University of Washington campus flock.",
+      "townResource": "Seattle plus UW's School of Environmental and Forest Sciences (Marzluff's crow lab): city amenities and a ready host.",
+      "permitting": "Migratory-bird research permits only, materially lighter than the marine or near-person regimes.",
+      "slug": "corvid-track"
+    },
+    {
+      "track": "corvid",
+      "title": "Tokyo (walnut-cracking crows)",
+      "lat": 35.68,
+      "lon": 139.69,
+      "flagship": true,
+      "why": "Documented crosswalk nut-cracking innovation; the urban-abundance thesis running in the wild in a major research city.",
+      "nearHotspot": "Works the large-billed-crow population in the metropolitan wards where the behavior is documented.",
+      "townResource": "Tokyo: dense resources and multiple universities for cohorts on long stays.",
+      "permitting": "Native-bird research permitting under Japanese wildlife law; no marine or near-person burden.",
+      "slug": "corvid-track"
+    },
+    {
+      "track": "corvid",
+      "title": "New Caledonia (tool crows)",
+      "lat": -21.3,
+      "lon": 165.5,
+      "flagship": true,
+      "why": "New Caledonian crow tool-manufacture, the aviary-cognition heartland the box rigs are built around.",
+      "nearHotspot": "Works the wild tool-using crow population in its home range, near but not disrupting nesting sites.",
+      "townResource": "Noumea as the resource base; an established site for visiting corvid-cognition field teams.",
+      "permitting": "Territorial wildlife research permits; a well-trodden path for the existing crow-cognition groups.",
+      "slug": "corvid-track"
+    },
+    {
+      "track": "corvid",
+      "title": "Cambridge / Oxford (candidate)",
+      "lat": 52.2,
+      "lon": 0.13,
+      "why": "Regular candidate: strong corvid-cognition labs plus resident rook and jackdaw populations in a university city.",
+      "slug": "corvid-track"
+    },
+    {
+      "track": "ape",
+      "title": "Maasai Mara (Sapolsky-line baboons)",
+      "lat": -1.5,
+      "lon": 35.15,
+      "flagship": true,
+      "why": "The region of Sapolsky's transmitted peaceable-baboon culture (Sapolsky and Share 2004); the origin population for the whole scaffold-a-wild-culture thesis.",
+      "nearHotspot": "Works habituated savanna baboon troops of the kind Sapolsky followed for three decades in the greater Mara ecosystem.",
+      "townResource": "The Mara has lodges and long-standing field-research presence for extended seasons; a formal host would be arranged, not assumed.",
+      "permitting": "HEAVY and honest: the Maasai Mara is a protected, community-and-government-governed reserve. Any hands-on program would require a lofty, state-sanctioned arrangement with Kenyan authorities and Maasai community consent, not a casual field permit. Access, if ever, is a deliberate national-level undertaking.",
+      "slug": "ape-track"
+    },
+    {
+      "track": "ape",
+      "title": "Amboseli (baboon research, candidate)",
+      "lat": -2.65,
+      "lon": 37.26,
+      "why": "Regular candidate: the separate long-running Amboseli baboon research lineage; a protected-park population, distinct from Sapolsky's Mara troop.",
+      "slug": "ape-track"
+    },
+    {
+      "track": "ape",
+      "title": "Gombe (Goodall chimpanzee culture)",
+      "lat": -4.67,
+      "lon": 29.63,
+      "flagship": true,
+      "why": "Sixty-plus years of chimpanzee culture research (Whiten 1999 lineage); wild transmission already documented on site.",
+      "nearHotspot": "Works the habituated Gombe chimpanzee community that the Stream Research Centre has followed for decades.",
+      "townResource": "Gombe Stream Research Centre (Jane Goodall Institute): a standing field station on Lake Tanganyika.",
+      "permitting": "Tanzanian research permits + near-person sanctuary ethic + strict two-way disease control, on an established footing.",
+      "slug": "ape-track"
+    },
+    {
+      "track": "elephant",
+      "title": "Amboseli (matriarch knowledge)",
+      "lat": -2.65,
+      "lon": 37.26,
+      "flagship": true,
+      "why": "Long-term matriarch-knowledge research (McComb); the thesis made literal in a population whose matrilines are already tracked.",
+      "nearHotspot": "Works habituated savanna family groups whose matrilines are already individually known.",
+      "townResource": "The long-running Amboseli elephant-research presence is a helpful base where it exists; a formal host is arranged, not assumed.",
+      "permitting": "Kenyan wildlife and protected-park permits + ESA/CITES for a listed species; conservation-partnership coordination required.",
+      "slug": "elephant-track"
+    },
+    {
+      "track": "elephant",
+      "title": "Northern Thailand (sanctuary method-ground)",
+      "lat": 18.8,
+      "lon": 98.9,
+      "flagship": true,
+      "why": "Asian-elephant sanctuary method-ground paired with wild-range access; the ethical captive lever for the wild work.",
+      "nearHotspot": "Pairs an ethical sanctuary method-ground with nearby wild-range populations, never new captures.",
+      "townResource": "Chiang Mai plus established ethical elephant sanctuaries and mahout partnerships for long stays.",
+      "permitting": "Sanctuary and near-person welfare review + ESA/CITES; mahout-partnership access already exists.",
+      "slug": "elephant-track"
+    },
+    {
+      "track": "bear",
+      "title": "Katmai / Brooks Falls",
+      "lat": 58.56,
+      "lon": -155.78,
+      "flagship": true,
+      "why": "Habituated, non-food-conditioned brown bears; the ideal observed-wild study access, with the no-food rule already the site norm.",
+      "nearHotspot": "Works bears that are naturally feeding and observer-habituated, exactly the no-food-conditioning model.",
+      "townResource": "National Park Service infrastructure at Brooks Camp supplies a seasonal field base.",
+      "permitting": "NPS and state wildlife-research permits; the park's strict no-feeding rules ALIGN with the track's hard rule.",
+      "slug": "bear-track"
+    },
+    {
+      "track": "bear",
+      "title": "Great Smoky Mountains (black bear, candidate)",
+      "lat": 35.6,
+      "lon": -83.5,
+      "why": "Regular candidate: dense, studied American black-bear population with university partners and a no-feeding culture.",
+      "slug": "bear-track"
+    },
+    {
+      "track": "domestic",
+      "title": "Rust Belt cities (urban rodents)",
+      "lat": 41.5,
+      "lon": -81.7,
+      "flagship": true,
+      "why": "Urban-rodent abundance as a naturally occurring uplift condition; pairs directly with the corvid urban thesis.",
+      "nearHotspot": "Works city rodent and stray-carnivore populations where urban abundance already runs the condition set.",
+      "townResource": "Major Midwestern universities and city infrastructure host the paired wild-and-domestic study arms.",
+      "permitting": "Light: local wildlife-research permits for the wild arm, companion-animal welfare review for the domestic partner.",
+      "slug": "domestic-track"
+    },
+    {
+      "track": "domestic",
+      "title": "Australian rangelands (dingo)",
+      "lat": -25,
+      "lon": 133,
+      "flagship": true,
+      "why": "Wild dingo counterpart plus village-dog study partners; the dual-track lever at its clearest.",
+      "nearHotspot": "Works wild dingo populations alongside domestic-dog study partners, not captive-only work.",
+      "townResource": "Regional research stations and university partners provide the field base for long rangeland seasons.",
+      "permitting": "State wildlife-research permits for the dingo arm; companion-animal welfare for the domestic partner.",
+      "slug": "domestic-track"
+    },
+    {
+      "track": "boxed",
+      "title": "Host-lab rig cluster (candidate)",
+      "lat": 51.5,
+      "lon": -0.12,
+      "why": "Regular candidate: insect and jumping-spider rigs are site-flexible; sited wherever a host lab and cohort exist.",
+      "slug": "boxed-species-track"
+    },
+
+    { "track": "marine-box", "title": "Iberian Atlantic shelf (candidate)", "lat": 38.7, "lon": -9.4, "why": "Regular candidate: Octopus vulgaris fishery heartland off Portugal and Galicia; a dense, common, well-worked population.", "slug": "marine-box-track" },
+    { "track": "marine-box", "title": "Aegean / Adriatic (candidate)", "lat": 37.9, "lon": 23.7, "why": "Regular candidate: warm Mediterranean shelf octopus grounds with a long fishing and marine-research tradition.", "slug": "marine-box-track" },
+    { "track": "marine-box", "title": "Pacific Northwest (giant Pacific octopus, candidate)", "lat": 47.6, "lon": -122.5, "why": "Regular candidate: giant Pacific octopus in Puget Sound; cold-water cephalopod range beside the Salish cetacean work.", "slug": "marine-box-track" },
+
+    { "track": "cetacean", "title": "Sarasota Bay (bottlenose, candidate)", "lat": 27.3, "lon": -82.55, "why": "Regular candidate: one of the longest-studied wild bottlenose-dolphin communities in the world, on a resourced coast.", "slug": "cetacean-track" },
+    { "track": "cetacean", "title": "Moray Firth (candidate)", "lat": 57.68, "lon": -3.9, "why": "Regular candidate: resident bottlenose dolphins with established Scottish research programs.", "slug": "cetacean-track" },
+
+    { "track": "corvid", "title": "Vienna / Konrad Lorenz (candidate)", "lat": 48.2, "lon": 16.37, "why": "Regular candidate: strong European corvid-cognition research base plus resident hooded crows and ravens.", "slug": "corvid-track" },
+    { "track": "corvid", "title": "Pacific Northwest cities (candidate)", "lat": 45.52, "lon": -122.68, "why": "Regular candidate: dense urban American-crow roosts in Portland and Vancouver; the urban-abundance thesis at scale.", "slug": "corvid-track" },
+
+    { "track": "ape", "title": "Budongo / Kibale (candidate)", "lat": 1.72, "lon": 31.55, "why": "Regular candidate: habituated chimpanzee communities with long-running Ugandan forest-research stations.", "slug": "ape-track" },
+    { "track": "ape", "title": "Cayo Santiago macaques (candidate)", "lat": 18.16, "lon": -65.73, "why": "Regular candidate: the free-ranging rhesus macaque colony off Puerto Rico; a monkey population that fits the field method.", "slug": "ape-track" },
+
+    { "track": "elephant", "title": "Okavango / Chobe (candidate)", "lat": -18.6, "lon": 24.1, "why": "Regular candidate: large, studied savanna-elephant populations in northern Botswana with matriline structure.", "slug": "elephant-track" },
+
+    { "track": "bear", "title": "Minnesota / Great Lakes (black bear, candidate)", "lat": 47.5, "lon": -93.5, "why": "Regular candidate: densely studied American black bears with long-running university field research.", "slug": "bear-track" },
+
+    { "track": "domestic", "title": "UK cities (urban fox, candidate)", "lat": 51.5, "lon": -0.12, "why": "Regular candidate: urban red foxes thriving on city abundance; the wild counterpart to the domestic-dog arm.", "slug": "domestic-track" },
+    { "track": "domestic", "title": "New York City (urban rat, candidate)", "lat": 40.71, "lon": -74.0, "why": "Regular candidate: the archetypal urban-rodent population; abundance-driven behavioral flexibility, corvid cross-reference.", "slug": "domestic-track" },
+
+    { "track": "boxed", "title": "Panama / STRI (candidate)", "lat": 9.15, "lon": -79.85, "why": "Regular candidate: tropical insect and spider diversity with a major established field-research institute.", "slug": "boxed-species-track" }
+  ]
+}

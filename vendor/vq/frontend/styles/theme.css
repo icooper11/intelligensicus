@@ -1,0 +1,162 @@
+/* =============================================================================
+   VQ Platform — User Theme Layer (canonical --vq-* tokens)
+   -----------------------------------------------------------------------------
+   THE source of truth for runtime-themeable color. The Settings → Appearance
+   picker rewrites these variables at runtime via
+   document.documentElement.style.setProperty('--vq-x', val) — a DOM-API write,
+   which is CSP-clean (no style-src 'unsafe-inline' needed). See
+   src/contexts/ThemeContext.tsx and memory/project_theme_system.md.
+
+   DEFAULTS = the "Classic" look (today's cyan -> blue dark chrome). With no
+   saved theme, the site renders byte-identical to pre-theme-system VQ.
+
+   LOCKED / OUT OF SCOPE: the 8 per-quotient semantic colors
+   (--kq-color ... --bq-color) are NOT user-themeable — they live in
+   quotientConfig.ts / design-system.css and stay fixed. This file never
+   touches them.
+   ========================================================================== */
+
+:root {
+  /* --- the 4 user-themeable accent knobs (Classic defaults) --- */
+  --vq-accent-start: #06B6D4;   /* gradient stop 1 (cyan-500)  */
+  --vq-accent-end:   #3B82F6;   /* gradient stop 2 (blue-500)  */
+  --vq-accent-strong:#22D3EE;   /* lit text / active accent (cyan-400) */
+  --vq-glow:         #3B82F6;   /* orb blobs + box/text shadows */
+  --vq-nav-active:   #22D3EE;   /* vertical-nav active highlight (cyan-400) */
+  --vq-scrollbar:    var(--vq-accent-end); /* scrollbar track/corner — defaults to the accent, per-preset overridable */
+
+  /* --- app surface (base) — overridden by [data-base="night"] below --- */
+  --vq-bg-1: #0F172A;
+  --vq-bg-2: #1E293B;
+  --vq-bg-3: #0F172A;
+
+  /* derived alpha tints (color-mix; Chromium 111+ / the platform targets
+     modern Chromium via Kopis + CF). Kept as tokens so chrome can reference
+     a single name instead of re-deriving alpha at every call site. */
+  --vq-accent-soft:   color-mix(in srgb, var(--vq-nav-active) 20%, transparent);
+  --vq-accent-faint:  color-mix(in srgb, var(--vq-nav-active) 10%, transparent);
+  --vq-glow-soft:     color-mix(in srgb, var(--vq-glow) 40%, transparent);
+}
+
+/* Night-study base: dimmer canvas + warm-reduced surfaces. Selected by the
+   #5 dark/night knob; orthogonal to the accent preset (any accent can pair
+   with day or night). NOT a light theme — VQ stays dark-only by design. */
+:root[data-base="night"] {
+  --vq-bg-1: #060B16;
+  --vq-bg-2: #0B1422;
+  --vq-bg-3: #050912;
+}
+
+/* Per-preset SCROLLBAR exception: Winterfest's accent is near-white (#E0F2FE),
+   so the default accent-driven scrollbar track vanishes against light surfaces.
+   Override just the scrollbar to a visible saturated icy blue — Winterfest's
+   theme colors stay original; only its scrollbar differs. data-preset is set on
+   <html> by ThemeContext. */
+:root[data-preset="winterfest"] { --vq-scrollbar: #38BDF8; }
+
+/* DO NOT theme `body` globally. A global body tint bleeds the theme color onto
+   EVERY page — including the per-quotient assessment ecosystem (runners /
+   masters / loaders / onboarding), which is ZERO-TOUCH. So body keeps
+   index.css's original neutral gradient; theming applies ONLY via `.vq-app-bg`
+   on opted-in NON-ACADEMIC page roots. (Imran 2026-06-05: reverted a global
+   body tint that bled the accent color behind the quotient assessment pages.) */
+
+/* =============================================================================
+   Helper utility classes — chrome applies THESE instead of hardcoded
+   cyan/blue Tailwind classes. Real stylesheet rules (themeable + CSP-clean).
+   ========================================================================== */
+
+/* solid accent gradient (buttons, logo chip, sign-up CTA) */
+.vq-accent-gradient {
+  background-image: linear-gradient(135deg, var(--vq-accent-start), var(--vq-accent-end));
+}
+.vq-accent-gradient:hover { filter: brightness(1.08); }
+
+/* lit accent text (active top-nav item, "current page", links) */
+.vq-accent-text { color: var(--vq-accent-strong); }
+
+/* vertical-nav active item: tinted fill + left rail + lit text */
+.vq-nav-active {
+  background-image: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--vq-accent-start) 20%, transparent),
+    color-mix(in srgb, var(--vq-accent-end) 20%, transparent)
+  );
+  color: var(--vq-accent-strong);
+  border-left: 4px solid var(--vq-nav-active);
+}
+/* the active item's icon chip */
+.vq-nav-active-icon {
+  background-color: var(--vq-accent-soft);
+  color: var(--vq-accent-strong);
+}
+
+/* focus ring in accent (search inputs) */
+.vq-focus-accent:focus {
+  outline: none;
+  border-color: color-mix(in srgb, var(--vq-nav-active) 50%, transparent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--vq-nav-active) 20%, transparent);
+}
+
+/* themeable glow orb (dashboard ambient blobs) */
+.vq-glow-orb { background-color: var(--vq-glow); }
+
+/* full-page themeable app background — replaces per-page hardcoded
+   `bg-gradient-to-br from-slate-9xx ...`. The middle stop mixes the ACCENT into
+   the dark surface (reproducing the old `via-<accent>-950` tint) so the canvas
+   follows the theme color AND day/night. Phase 1 swaps page roots to this. */
+.vq-app-bg {
+  background-image: linear-gradient(135deg,
+    var(--vq-bg-1) 0%,
+    color-mix(in srgb, var(--vq-accent-end) 45%, var(--vq-bg-2)) 50%,
+    var(--vq-bg-3) 100%);
+}
+
+/* accent gradient as clipped text (hero headings) */
+.vq-accent-gradient-text {
+  background-image: linear-gradient(135deg, var(--vq-accent-start), var(--vq-accent-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* solid accent fill (badges/pills) + accent border */
+.vq-accent-bg { background-color: var(--vq-nav-active); }
+.vq-accent-border { border-color: var(--vq-nav-active); }
+
+/* accent at LOW ALPHA — soft fills, hover states, faint borders/shadows. These
+   replace the recurring `bg-X-500/20`, `hover:bg-X-500/30`, `border-X-400/40`,
+   `shadow-X-500/10` Tailwind alpha variants so they theme too (color-mix on the
+   var). The Phase-1 vocabulary for accent-tinted surfaces. */
+.vq-accent-soft-bg       { background-color: color-mix(in srgb, var(--vq-nav-active) 18%, transparent); }
+.vq-accent-soft-bg:hover { background-color: color-mix(in srgb, var(--vq-nav-active) 30%, transparent); }
+.vq-accent-faint-bg      { background-color: color-mix(in srgb, var(--vq-nav-active) 10%, transparent); }
+.vq-accent-soft-border   { border-color: color-mix(in srgb, var(--vq-nav-active) 40%, transparent); }
+.vq-glow-shadow          { box-shadow: 0 8px 24px color-mix(in srgb, var(--vq-glow) 25%, transparent); }
+
+/* DEEP-THEME SURFACES — card/panel backgrounds + borders that carry a faint
+   accent tint over the dark glass base, so whole panels shift with the theme
+   (not just accent elements). Replace the recurring `bg-slate-900/50`,
+   `bg-slate-800/50`, `border-white/10` card idioms on NON-ACADEMIC pages with
+   these. The assessment ecosystem (runners/masters/loaders/onboarding) + the
+   per-quotient colors are zero-touch. Tint % is the tunable depth knob. */
+.vq-surface        { background-color: color-mix(in srgb, var(--vq-accent-end) 16%, rgba(15, 23, 42, 0.55)); }
+.vq-surface-2      { background-color: color-mix(in srgb, var(--vq-accent-end) 20%, rgba(30, 41, 59, 0.50)); }
+.vq-surface-faint  { background-color: color-mix(in srgb, var(--vq-accent-end) 11%, rgba(15, 23, 42, 0.35)); }
+.vq-surface-border { border-color: color-mix(in srgb, var(--vq-accent-end) 30%, rgba(255, 255, 255, 0.10)); }
+/* near-opaque themed PANEL (vertical nav, top header, dropdowns) — tints with
+   the theme while staying readable over content. */
+.vq-surface-panel  { background-color: color-mix(in srgb, var(--vq-accent-end) 20%, rgba(15, 23, 42, 0.92)); }
+
+/* =============================================================================
+   Strobe / motion knob. #4 strobe on/off. data-motion="off" disables the
+   ambient pulse animations; also auto-respected for prefers-reduced-motion.
+   ========================================================================== */
+/* Scoped to the THEMED glow-orbs only (NOT global .animate-pulse) — so turning
+   strobe off never freezes motion on the zero-touch assessment pages. */
+:root[data-motion="off"] .vq-glow-orb { animation: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  :root .animate-pulse { animation: none !important; }
+}

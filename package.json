@@ -1,0 +1,79 @@
+{
+  "name": "intelligensicus",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Imran Cooper",
+  "license": "AGPL-3.0-only",
+  "description": "Local-first wildlife research workstation",
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test",
+    "desktop": "electron .",
+    "dist:win": "node scripts/build-desktop.mjs"
+  },
+  "devDependencies": {
+    "electron": "45.3.2",
+    "electron-builder": "26.18.0"
+  },
+  "build": {
+    "appId": "org.intelligensicus.research",
+    "productName": "Intelligensicus",
+    "asar": true,
+    "asarUnpack": [
+      "server.mjs",
+      "app.js",
+      "client-logger.js",
+      "index.html",
+      "styles.css",
+      "research-package.mjs",
+      "src/**/*.mjs",
+      "vendor/fflate/fflate.browser.js",
+      "vendor/fflate/LICENSE",
+      "vendor/vq/frontend/styles/theme.css",
+      "intelligensicus-library/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "electron/main.cjs",
+      "server.mjs",
+      "app.js",
+      "client-logger.js",
+      "index.html",
+      "styles.css",
+      "research-package.mjs",
+      "src/**/*.mjs",
+      "vendor/fflate/fflate.browser.js",
+      "vendor/fflate/LICENSE",
+      "vendor/vq/frontend/styles/theme.css",
+      "intelligensicus-library/outposts.json",
+      "intelligensicus-library/assets/world-land.geojson",
+      "intelligensicus-library/assets/maplibre-gl.v5.6.2.js",
+      "intelligensicus-library/assets/maplibre-gl.v5.6.2.css",
+      "intelligensicus-library/assets/favicon-octopus.ico",
+      "intelligensicus-library/assets/favicon-octopus.png",
+      "intelligensicus-library/assets/og-octopus-1200.webp",
+      "LICENSE",
+      "DESKTOP_INSTALL.md",
+      "LICENSE_STATUS.md",
+      "THIRD_PARTY_LICENSES.md",
+      "!node_modules/**"
+    ],
+    "win": {
+      "icon": "intelligensicus-library/assets/favicon-octopus.ico",
+      "target": [{ "target": "nsis", "arch": ["x64"] }],
+      "artifactName": "Intelligensicus-Setup-${version}-win-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Intelligensicus"
+    }
+  }
+}

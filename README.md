@@ -1,0 +1,50 @@
+# Intelligensicus
+
+Species-agnostic wildlife research software for connecting field media and observations to confirmed individual-animal histories and project timelines.
+
+This public repository is the source for the downloadable Electron desktop app. The hosted web product, download page, and company/product pages are maintained separately by the project owner and are not part of this repository.
+
+## Windows desktop app
+
+Download the per-user Windows x64 installer from [GitHub Releases](https://github.com/icooper11/intelligensicus/releases). Install to a selected folder and launch from the Start Menu or desktop shortcut. The installer is currently unsigned, so Windows may show a SmartScreen warning. Verify its SHA-256 against the release notes before running it.
+
+See [DESKTOP_INSTALL.md](DESKTOP_INSTALL.md) for installation, data storage, permission, and uninstall details.
+
+## What it does
+
+- Organizes projects, photo/video/audio/document/text evidence, and dated field observations.
+- Connects evidence to project timelines and confirmed individual-animal histories.
+- Supports researcher-controlled identity, annotations, roles, and provenance-aware exports.
+- Keeps original media in the local profile by default. Sharing project records does not automatically transfer source media.
+
+Automated species/individual identification, pose, and persistent visual re-identification are not implemented in this release. WildlifeTools is evaluation-only and is not included in the running inference path. No wildlife model weights or datasets are bundled.
+
+## Development
+
+Requirements: Node.js 22.13 or later and npm.
+
+```powershell
+npm install
+npm test
+npm start
+```
+
+The local web service binds to loopback. For desktop development, install dependencies and run:
+
+```powershell
+npm run desktop
+```
+
+To build the Windows installer on a Windows machine with Electron's build prerequisites installed:
+
+```powershell
+npm run dist:win
+```
+
+The packaging script redirects Electron Builder caches and output to a drive with sufficient free space when possible. The Electron desktop profile is isolated under Electron's per-user application data folder.
+
+See [BUILD_SECURITY.md](BUILD_SECURITY.md) for the current audit status of build-only dependencies.
+
+## Open-source components
+
+See [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) for component and notice details. First-party source is licensed under AGPL-3.0-only; see [LICENSE](LICENSE). Third-party licenses remain applicable to their respective components.

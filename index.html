@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183b34">
+  <meta name="description" content="Species-agnostic wildlife research software for organizing photos, video, audio, documents, and field observations into longitudinal timelines for confirmed individual animals.">
+  <link rel="canonical" href="https://intelligensicus.theamanuensis.com/">
+  <title>Intelligensicus | Wildlife Research Software</title>
+  <link rel="icon" href="intelligensicus-library/assets/favicon-octopus.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="64x64" href="intelligensicus-library/assets/favicon-octopus.png">
+  <link rel="apple-touch-icon" href="intelligensicus-library/assets/favicon-octopus.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Intelligensicus">
+  <meta property="og:title" content="Intelligensicus | Wildlife Research Software">
+  <meta property="og:description" content="Organize wildlife photos, video, audio, documents, and observations into project timelines centered on confirmed individual animals.">
+  <meta property="og:url" content="https://intelligensicus.theamanuensis.com/">
+  <meta property="og:image" content="https://intelligensicus.theamanuensis.com/intelligensicus-library/assets/og-octopus-1200.webp">
+  <meta property="og:image:secure_url" content="https://intelligensicus.theamanuensis.com/intelligensicus-library/assets/og-octopus-1200.webp">
+  <meta property="og:image:type" content="image/webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Octopus on the seafloor, representing species-agnostic wildlife research">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Intelligensicus | Wildlife Research Software">
+  <meta name="twitter:description" content="Organize wildlife photos, video, audio, documents, and observations into project timelines centered on confirmed individual animals.">
+  <meta name="twitter:image" content="https://intelligensicus.theamanuensis.com/intelligensicus-library/assets/og-octopus-1200.webp">
+  <link rel="stylesheet" href="intelligensicus-library/assets/maplibre-gl.v5.6.2.css">
+  <link rel="stylesheet" href="vendor/vq/frontend/styles/theme.css">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="intelligensicus-library/assets/maplibre-gl.v5.6.2.js"></script>
+  <script defer src="client-logger.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#projects" aria-label="Intelligensicus home">
+      <span class="brand-mark">I</span>
+      <span><strong>Intelligensicus</strong><small>Field research, kept in context</small></span>
+    </a>
+    <nav class="global-nav" aria-label="Main navigation">
+      <button class="global-link active" data-view="projects">Projects</button>
+      <button class="global-link" data-view="outposts">Outpost network</button>
+      <button class="global-link" data-view="connectivity">Connectivity</button>
+    </nav>
+    <div class="top-actions">
+      <span class="local-indicator"><i></i> Local workspace</span>
+      <button class="icon-button" id="settings-button" aria-label="Settings" title="Settings">⚙</button>
+      <button class="button button-primary" id="new-project-button">＋ <span>New project</span></button>
+        <img class="user-avatar" id="signed-in-avatar" alt="Your profile image" hidden>
+        <span class="user-indicator" id="signed-in-user" hidden></span>
+        <button class="button button-secondary" id="sign-out-button" hidden>Sign out</button>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+  <div id="modal-root"></div>
+  <div id="toast-root" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
